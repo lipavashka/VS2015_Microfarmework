@@ -20,12 +20,12 @@ namespace STM32F4DISC_Test
                 ledYellow.Write(true);
                 ledRed.Write(true);
                 ledBlue.Write(true);
-                Thread.Sleep(100);
+                Thread.Sleep(120);
                 ledGreen.Write(false);
                 ledYellow.Write(false);
                 ledRed.Write(false);
                 ledBlue.Write(false);
-                Thread.Sleep(100);
+                Thread.Sleep(130);
             }
         }
     }
