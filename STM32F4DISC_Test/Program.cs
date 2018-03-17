@@ -9,7 +9,7 @@ namespace STM32F4DISC_Test
     {
         public static void Main()
         {
-            OutputPort ledGreen = new OutputPort((Cpu.Pin)60, false);
+            OutputPort ledGreen = new OutputPort((Cpu.Pin)60, false); 
             OutputPort ledYellow = new OutputPort((Cpu.Pin)61, false);
             OutputPort ledRed = new OutputPort((Cpu.Pin)62, false);
             OutputPort ledBlue = new OutputPort((Cpu.Pin)63, false);
