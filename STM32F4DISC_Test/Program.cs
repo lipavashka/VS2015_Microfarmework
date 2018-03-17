@@ -7,7 +7,7 @@ namespace STM32F4DISC_Test
     {
         public static void Main()
         {
-            Debug.Print(Resources.GetString(Resources.StringResources.String1));
+            Debug.Print(Resources.GetString(Resources.StringResources.String1)); 
         }
     }
 }
