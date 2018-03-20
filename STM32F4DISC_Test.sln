@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STM32F4DISC_Test", "STM32F4DISC_Test\STM32F4DISC_Test.csproj", "{EA899FE4-EF18-4F07-AD52-2BF96E31FFFD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADC_Test", "ADC\ADC_Test.csproj", "{951F02C2-82E2-4794-A5D9-5DA381EAEB86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{EA5A8400-C32C-4959-9B77-84B0964CB649}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +21,16 @@ Global
 		{EA899FE4-EF18-4F07-AD52-2BF96E31FFFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA899FE4-EF18-4F07-AD52-2BF96E31FFFD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EA899FE4-EF18-4F07-AD52-2BF96E31FFFD}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{951F02C2-82E2-4794-A5D9-5DA381EAEB86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{951F02C2-82E2-4794-A5D9-5DA381EAEB86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{951F02C2-82E2-4794-A5D9-5DA381EAEB86}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{951F02C2-82E2-4794-A5D9-5DA381EAEB86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{951F02C2-82E2-4794-A5D9-5DA381EAEB86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{951F02C2-82E2-4794-A5D9-5DA381EAEB86}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{EA5A8400-C32C-4959-9B77-84B0964CB649}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA5A8400-C32C-4959-9B77-84B0964CB649}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA5A8400-C32C-4959-9B77-84B0964CB649}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA5A8400-C32C-4959-9B77-84B0964CB649}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
