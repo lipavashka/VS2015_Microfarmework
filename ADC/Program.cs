@@ -10,28 +10,26 @@ namespace ADC_Test
     {
         public static void Main()
         {
-            // var op = new OutputPort(Stm32F4Discovery.FreePins.PA15, false);
-
+            int DacValue1 = 10;
+            int DacValue2 = 10;
 
             Debug.Print(Resources.GetString(Resources.StringResources.String1));
 
+            // ADC
+            AnalogInput ADC0 = new AnalogInput(ADC.PA1);
+            AnalogInput ADC1 = new AnalogInput(ADC.PA2);
+            AnalogInput ADC2 = new AnalogInput(ADC.PA3);
+            AnalogInput ADC3 = new AnalogInput(ADC.PB0); // PB0 = PA0 ???
 
-            ///* Initialize ADC channel 0 (PA6) */
-            AnalogInput ADC0 = new AnalogInput(ADC.Channel0_PA6);
+            //DAC
+            AnalogOutput DAC0 = new AnalogOutput(Cpu.AnalogOutputChannel.ANALOG_OUTPUT_0);
+            AnalogOutput DAC1 = new AnalogOutput(Cpu.AnalogOutputChannel.ANALOG_OUTPUT_1);
 
-            /* Initialize ADC channel 1 (PA7) */
-            AnalogInput ADC1 = new AnalogInput(ADC.Channel1_PA7);
+            DAC0.Scale = 1;
+            DAC0.Write(0.8); 
 
-            /* Initialize ADC channel 2 (PC1) */
-            AnalogInput ADC2 = new AnalogInput(ADC.Channel2_PC1);
-
-            /* Initialize ADC channel 3 (PC3) */
-            AnalogInput ADC3 = new AnalogInput(ADC.Channel3_PC3);
-
-
-            // AnalogOutput DAC0 = new AnalogOutput(Cpu.AnalogOutputChannel.ANALOG_OUTPUT_0);
-            //AnalogOutput DAC1 = new AnalogOutput(Cpu.AnalogOutputChannel.ANALOG_OUTPUT_1);
-            //AnalogOutput DAC2 = new AnalogOutput(Cpu.AnalogOutputChannel.ANALOG_OUTPUT_2);
+            DAC1.Scale = 1;
+            DAC1.Write(0.1); 
 
             /* Initialize LEDs */
             LED.LEDInit();
@@ -39,18 +37,36 @@ namespace ADC_Test
             while (true)
             {
                 /* Display the ADC converted value */
-                Debug.Print("Channel0 (pin " + ADC0.Pin + ") = " + (ADC0.Read() * 3.3).ToString("f2") + "V");
-                Debug.Print("Channel1 (pin " + ADC1.Pin + ") = " + (ADC1.Read() * 3.3).ToString("f2") + "V");
-                Debug.Print("Channel2 (pin " + ADC2.Pin + ") = " + (ADC2.Read() * 3.3).ToString("f2") + "V");
-                Debug.Print("Channel3 (pin " + ADC3.Pin + ") = " + (ADC3.Read() * 3.3).ToString("f2") + "V");
+                //int AdcValue = (ADC0.ReadRaw() * 1);
+                //string str = AdcValue.ToString();
+                Debug.Print("ADC0 (pin " + ADC0.Pin + ") = " + (ADC0.ReadRaw()));
+                Debug.Print("ADC1 (pin " + ADC1.Pin + ") = " + (ADC1.ReadRaw()));
+                Debug.Print("ADC2 (pin " + ADC2.Pin + ") = " + (ADC2.ReadRaw()));
+                Debug.Print("ADC3 (pin " + ADC3.Pin + ") = " + (ADC3.ReadRaw()));
+
                 Debug.Print("\r\n--------------------------------\r\n");
 
                 /* Wait for 1s */
-                Thread.Sleep(1000);
+                Thread.Sleep(250);
 
                 /* Toggle Green LED */
                 LED.GreenLedToggle();
                 LED.RedLedToggle();
+
+                DacValue1 += 100;
+                if (DacValue1 > 4000)
+                {
+                    DacValue1 = 0;
+                }
+                DAC0.WriteRaw(DacValue1);
+
+                DacValue2 += 100;
+                if (DacValue2 > 4000)
+                {
+                    DacValue2 = 0;
+                }
+                DAC1.WriteRaw(DacValue2);
+
             }
         }
     }

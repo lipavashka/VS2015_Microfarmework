@@ -58,11 +58,18 @@ namespace STM32F429I_Discovery.Netmf.Hardware
         /// </summary>
         public static OutputPort led2;
 
+        public static InputPort InitPort;
+
         /// <summary>
         /// Configures LED GPIO.
         /// </summary>
         public static void LEDInit()
         {
+            //InitPort = new InputPort(Led1, false, Port.ResistorMode.PullDown);
+            //InitPort = new InputPort(Led2, false, Port.ResistorMode.PullDown);
+            //InitPort = null; 
+            
+
             led1 = new OutputPort(Led1, false);
             led2 = new OutputPort(Led2, false);
         }
@@ -139,6 +146,15 @@ namespace STM32F429I_Discovery.Netmf.Hardware
         /// Analog input channel3 (pin PC3)
         /// </summary>
         public const Cpu.AnalogChannel Channel3_PC3 = Cpu.AnalogChannel.ANALOG_3;
+
+
+        public const Cpu.AnalogChannel PA1 = Cpu.AnalogChannel.ANALOG_0; // precision=12
+        public const Cpu.AnalogChannel PA2 = Cpu.AnalogChannel.ANALOG_1; // precision=12
+        public const Cpu.AnalogChannel PA3 = Cpu.AnalogChannel.ANALOG_2; // precision=12
+        public const Cpu.AnalogChannel PB0 = Cpu.AnalogChannel.ANALOG_3; // precision=12
+        public const Cpu.AnalogChannel PB1 = Cpu.AnalogChannel.ANALOG_4; // precision=12
+        public const Cpu.AnalogChannel PC4 = Cpu.AnalogChannel.ANALOG_5; // precision=12
+        public const Cpu.AnalogChannel PC5 = Cpu.AnalogChannel.ANALOG_6; // precision=12
     }
 
     /// <summary>
@@ -156,6 +172,17 @@ namespace STM32F429I_Discovery.Netmf.Hardware
         /// <para>Note: PA5 is also used by the ADC</para>
         /// </summary>
         public const Cpu.AnalogOutputChannel Channel1_PA5 = Cpu.AnalogOutputChannel.ANALOG_OUTPUT_1;
+
+        public const Cpu.AnalogOutputChannel PA4 = Cpu.AnalogOutputChannel.ANALOG_OUTPUT_0; // precision=12
+        public const Cpu.AnalogOutputChannel PA5 = Cpu.AnalogOutputChannel.ANALOG_OUTPUT_1; // precision=12
+    }
+
+    public static class AnalogOutputChannels
+    {
+        // ReSharper disable InconsistentNaming
+        public const Cpu.AnalogOutputChannel PA4 = Cpu.AnalogOutputChannel.ANALOG_OUTPUT_0; // precision=12
+        public const Cpu.AnalogOutputChannel PA5 = Cpu.AnalogOutputChannel.ANALOG_OUTPUT_1; // precision=12
+        // ReSharper restore InconsistentNaming
     }
 
     /// <summary>
