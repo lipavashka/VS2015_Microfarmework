@@ -28,7 +28,7 @@ namespace Common
             public const Cpu.Pin PA6 = (Cpu.Pin)(0 * 16 + 6); //6 SPI0(miso)
             public const Cpu.Pin PA7 = (Cpu.Pin)(0 * 16 + 7); //7 SPI0(mosi)
             public const Cpu.Pin PA8 = (Cpu.Pin)(0 * 16 + 8); //8
-            public const Cpu.Pin PA9 = (Cpu.Pin)(0 * 16 + 9); //9 COM1(tx)
+            public const Cpu.Pin PA9 = (Cpu.Pin)(0 * 16 + 9);   //9  COM1(tx)
             public const Cpu.Pin PA10 = (Cpu.Pin)(0 * 16 + 10); //10 COM1(rx)
             public const Cpu.Pin PA11 = (Cpu.Pin)(0 * 16 + 11); //11 COM1(cts)
             public const Cpu.Pin PA12 = (Cpu.Pin)(0 * 16 + 12); //12 COM1(rts)

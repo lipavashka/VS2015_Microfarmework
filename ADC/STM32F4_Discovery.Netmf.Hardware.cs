@@ -58,7 +58,6 @@ namespace STM32F429I_Discovery.Netmf.Hardware
         /// </summary>
         public static OutputPort led2;
 
-        public static InputPort InitPort;
 
         /// <summary>
         /// Configures LED GPIO.
